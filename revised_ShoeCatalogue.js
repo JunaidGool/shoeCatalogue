@@ -123,10 +123,10 @@ function showColors(){
   //create a unique list of brands
   // filter my shoe array to only contain unique brands
   for (var i = 0; i < shoeDataArray.length; i++) {
-    var shoe = shoeDataArray[i];
-    if (colorsMap[shoe.shoeColor] === undefined){
-      colorsList.push({shoeColor : shoe.shoeColor});
-      colorsMap[shoe.shoeColor] = shoe.shoeColor;
+    var color = shoeDataArray[i];
+    if (colorsMap[color.shoeColor] === undefined){
+      colorsList.push({shoeColor : color.shoeColor});
+      colorsMap[color.shoeColor] = color.shoeColor;
     }
   }
 
@@ -149,10 +149,10 @@ function showSizes(){
   //create a unique list of brands
   // filter my shoe array to only contain unique brands
   for (var i = 0; i < shoeDataArray.length; i++) {
-    var shoe = shoeDataArray[i];
-    if (sizeMap[shoe.shoeSize] === undefined){
-      sizeList.push({shoeSize : shoe.shoeSize});
-      sizeMap[shoe.shoeSize] = shoe.shoeSize;
+    var size = shoeDataArray[i];
+    if (sizeMap[size.shoeSize] === undefined){
+      sizeList.push({shoeSize : size.shoeSize});
+      sizeMap[size.shoeSize] = size.shoeSize;
     }
   }
 
@@ -164,20 +164,6 @@ function showSizes(){
 }
 
 showSizes();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -220,12 +206,7 @@ function addStock(){
 
 document.getElementById("imagesCollection").style.visibility = "hidden";
 
-  for (var i=0;i<brandOptions.length;i++){
-    if (brandOptions.value === document.getElementById("brandNameInputID").value){
-      duplicates.push({brandName:brandNameInput.value})
-      alert("duplicate")
-    }
-  }
+
 
   if (brandNameInput.value.startsWith("addidas") && shoeSizeInput.value != ("") && shoeColorInput.value != ("") && shoeQuantityInput.value !=("") ){
     shoeDataArray.push({brandName:brandNameInput.value,
@@ -350,6 +331,7 @@ document.getElementById("tableOutput").innerHTML = shoeTableData;
  document.getElementById("myChart").style.visibility = "hidden";
 
  document.getElementById("imagesCollection").style.visibility = "hidden";
+ document.getElementById("selectionCriteriaOutput").style.visibility = "visible";
 
 
 localStorage.setItem("shoeDataArray", JSON.stringify(shoeDataArray));
@@ -484,6 +466,9 @@ function viewStockController() {
     document.getElementById("sizeFilterSelect").style.visibility = "visible";
     document.getElementById("myWelcome").style.visibility = "hidden";
     document.getElementById("myChart").style.visibility = "hidden";
+    document.getElementById("imagesCollection").style.visibility = "hidden";
+    document.getElementById("imagesCollection").style.visibility = "hidden";
+    document.getElementById("selectionCriteriaOutput").style.visibility = "hidden";
 };
 
 function viewCatalogue() {
@@ -506,4 +491,5 @@ function viewCatalogue() {
     document.getElementById("reebokPic").style.visibility = "hidden";
     document.getElementById("brandPic").style.visibility = "hidden";
     document.getElementById("myChart").style.visibility = "hidden";
+    document.getElementById("selectionCriteriaOutput").style.visibility = "hidden";
 };
