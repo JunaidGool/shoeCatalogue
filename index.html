@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="revised_ShoeCatalogue.css">
+    <meta charset="utf-8">
+    <title>Revised Shoe Catalogue</title>
+    <script src="handlebars-v4.0.5.js"></script>
+    <script src = "Chart.min.js"></script>
+  </head>
+  <body>
+
+    <div id="header">
+      <h2> Shoe Catalogue </h2>
+      <p> find your shoes here . . . </p>
+      <ul id = "menu">
+        <li style="cursor:default" id="stockController">Add Stock</li>
+        <li style="cursor:default" id="openCatalogue">Open Catalogue</li>
+      </ul>
+    </div>
+
+
+
+     <div class="brandPic" id="brandPic">
+    <img src="img7.jpg" id="image7" style="width:200px;height:150px;" />
+
+    </div>
+
+     <div class="selectionCriteriaOutput" id ="selectionCriteriaOutput">
+    <p class="outputSelectedBrand" id="outputSelectedBrand"></p>
+    <p class="outputSelectedSize" id="outputSelectedSize"></p>
+    <p class="outputSelectedColor" id="outputSelectedColor"></p>
+    <p class="outputSelectedQuantity" id="outputSelectedQuantity"></p>
+  </div>
+
+  <div class = "brandQuantities" id="brandQuantities">
+  <p> Total Quantity of Addidas Brand: <span id="addidasQuantity"></span></p>
+  <p> Total Quantity of Nike Brand: <span id="nikeQuantity"></span></p>
+  <p> Total Quantity of Puma Brand: <span id="pumaQuantity"></span></p>
+  <p> Total Quantity of Reebok Brand: <span id="reebokQuantity"></span></p>
+</div>
+
+
+<div class="filterCriteria" id="filterCriteria">
+<p class ="brandText">  Filter by Brand</span></p>
+<div class="brandDropDownOutput" id="brandDropDownOutput">
+  <select class="" name="">
+  </select>
+</div>
+
+<p class ="colorText" id ="colorText">Filter by Color</span></p>
+<div class="colorDropDownOutput" id="colorDropDownOutput">
+  <select class="" name="">
+  </select>
+</div>
+
+<p class ="sizeText" id="sizeText">Filter by Size</span></p>
+<div class="sizeDropDownOutput" id="sizeDropDownOutput">
+  <select class="" name="">
+  </select>
+</div>
+</div>
+
+
+
+  <div class="shoeInputs" id="shoeInputs">
+    <input type="text" class=classBrandNameInput id="brandNameInputID" placeholder="Enter Brand Name" ></input>
+    <input type="number" min="0" class=classShoeSizeInput id="shoeSizeInputID" placeholder="Enter Shoe Size"  ></input>
+    <input type="text" class=classShoeColorInput id="shoeColorInputID" placeholder="Enter Shoe Color"  ></input>
+    <input type="number" min="0" class=classShoeQuantityInput id="shoeQuantityInputID" placeholder="Enter Quantity"  ></input>
+    <button  class="addStockButton" type="button" id="addStockButton" >ADD STOCK</button>
+    <button  class="viewStockLevelsButton" type="button" id="viewStockLevelsButton">VIEW STOCK LEVELS</button>
+    <button  class="viewStock" type="button" id="viewStock" >VIEW STOCK</button>
+
+  </div>
+
+
+
+  <script id="brandDropDownScript" type="text/x-handlebars.template">
+
+  <div>
+  <select class="brandNameFilterSelect" id="brandNameFilterSelect">
+      <option value="">Select Brand Name</option>
+  {{#dropDownBrands}}
+      <option class ="brandOptions" value = "{{brandName}}">{{brandName}} </option>
+  {{/dropDownBrands}}
+  </select>
+</div>
+
+</script>
+
+
+
+<script id="colorDropDownScript" type="text/x-handlebars.template">
+
+<div>
+<select class="colorFilterSelect" id="colorFilterSelect">
+    <option value="">Select Color</option>
+{{#dropDownColors}}
+    <option class ="colorOptions" value = "{{shoeColor}}">{{shoeColor}} </option>
+{{/dropDownColors}}
+</select>
+</div>
+
+</script>
+
+
+
+<script id="sizeDropDownScript" type="text/x-handlebars.template">
+
+<div>
+<select class="sizeFilterSelect" id="sizeFilterSelect">
+    <option value="">Select Shoe Size</option>
+{{#dropDownSizes}}
+    <option class ="sizeOptions" value = "{{shoeSize}}">{{shoeSize}} </option>
+{{/dropDownSizes}}
+</select>
+</div>
+
+</script>
+
+<div class="chartTemp" id="chartTemp">
+  <div>
+    <canvas id="myChart"></canvas>
+  </div>
+</div>
+
+
+  <div class="tableOutput" id="tableOutput"></div>
+  <script id="shoeTableScript" type="text/x-handlebars.template">
+    <table id="myShoeTable">
+    <thead class ="shoeTableHead">
+    <th>Brand Name</th>
+    <th>Shoe Size</th>
+    <th>Shoe Color</th>
+    <th>Quantity</th>
+  </thead>
+  <tbody>
+      {{#shoeTable}}
+      <tr>
+          <td>{{brandName}}</td>
+          <td>{{shoeSize}}</td>
+          <td>{{shoeColor}}</td>
+          <td>{{shoeQuantity}}</td>
+      </tr>
+      {{/shoeTable}}
+  </tbody>
+</table>
+     </script>
+
+  <div class="imagesCollection" id="imagesCollection" width="100%">
+       <img src="img1.jpg" style="width:100px;height:50px;" />
+       <img src="img3.jpg" style="width:100px;height:50px;" />
+       <img src="img4.jpg" style="width:100px;height:50px;" />
+       <img src="img5.jpg" style="width:100px;height:50px;" />
+     </div>
+
+     <div class="addidasPic" id="addidasPic">
+    <img src="img1.jpg" id="image7" style="width:200px;height:150px;" />
+    </div>
+
+    <div class="nikePic" id="nikePic">
+   <img src="img3.jpg" id="image7" style="width:200px;height:150px;" />
+   </div>
+
+   <div class="pumaPic" id="pumaPic">
+  <img src="img4.jpg" id="image7" style="width:200px;height:150px;" />
+  </div>
+
+  <div class="reebokPic" id="reebokPic">
+ <img src="img5.jpg" id="image7" style="width:200px;height:150px;" />
+ </div>
+
+
+ <div class="myWelcome" id="myWelcome">
+   Welcome to my Shoe Catalogue.<br><br>
+   This is an online shoe catalogue which was designed for training purposes at www.projectcodex.co.za<br>
+   Currently this catalogue allows for a stock controller to add stock, view quantities, view a bar chart showing total amount<br> of brands available and view lised items.<br>
+   It also allows for a customer to access the "Shoe Catalogue" menu where all the available stock
+   will be displayed.<br> The customer will be able to filter through the table to find the desired brands, size or color.<br><br>
+
+   To begin, please select "Add Stock" which will allow you to add stock for the catalogue.<br>
+   You can also select "Open Catalogue" to view the listed Shoes.<br><br>
+
+   This catalogue specialzes in 4 brands, namely "Addidas", "Nike", "Puma" and Reebok.
+
+
+</div>
+
+
+
+
+       <script src = "revised_ShoeCatalogue.js"></script>
+
+  </body>
+</html>

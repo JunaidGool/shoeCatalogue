@@ -1,0 +1,204 @@
+#header {
+    height: 230px;
+    background-color: lightgrey;
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-family: 'Shift', sans-serif;
+    width: 100%;
+}
+#header h2 {
+    color: black;
+    font-size: 4em;
+    position: relative;
+    top: 30px;
+    left: 550px;
+    display: inline;
+}
+#header p {
+    color: black;
+    font-size: 1.3em;
+    font-weight: bold;
+    position: relative;
+    top: 90px;
+    left: 300px;
+    display: inline
+}
+#menu {
+    color: black;
+    position: relative;
+    top: 150px;
+    right:150px;
+    display: inline-block;
+}
+#menu li{
+    color: black;
+    font-weight: bold;
+    display: inline;
+    text-transform: uppercase;
+    margin-right: 14px;
+}
+
+.brandPic{
+  position: absolute;
+  bottom:430px;
+  margin: 5px;
+  display: inline-block;
+  visibility: hidden;
+}
+
+.selectionCriteriaOutput{
+  position: absolute;
+  bottom:430px;
+  left:250px;
+  visibility: hidden;
+}
+
+.shoeInputs{
+  margin: 5px;
+  position: relative;
+  font-family: 'Shift', sans-serif;
+  left:0px;
+  bottom: 170px;
+  visibility: hidden;
+}
+
+.tableOutput{
+  position: absolute;
+  top: 450px;
+  width: 100%;
+  visibility: hidden;
+}
+
+
+body {
+  font:15px arial,sans-serif;
+
+}
+h1 {
+  margin: 0 0 10px 0;
+  padding: 5px;
+  font-size: 24px;
+  background-color: #999;
+  color: #fff;
+}
+table {
+  margin: 1px;
+  width: 100%;
+
+}
+th, td {
+  padding: 5px;
+  border: 1px solid #999;
+}
+th {
+  background: #ccc;
+}
+
+.filterCriteria{
+  position: relative;
+  bottom:125px;
+  left:400px;
+  visibility: hidden;
+
+}
+
+.brandDropDownOutput{
+  position: relative;
+  bottom:32px;
+  left:120px;
+  visibility: hidden;
+}
+
+.colorText{
+  position: relative;
+  bottom:30px;
+  left:0px;
+  visibility: hidden;
+}
+
+  .colorDropDownOutput{
+    position: relative;
+    bottom:62px;
+    left:120px;
+    visibility: hidden;
+
+  }
+
+  .sizeText{
+    position: relative;
+    bottom:60px;
+    left:0px;
+    visibility: hidden;
+
+  }
+
+  .sizeDropDownOutput{
+    position: relative;
+    bottom:90px;
+    left:120px;
+    visibility: hidden;
+  }
+
+  .chartTemp {
+    position: relative;
+    width: 80%;
+    margin: 10px auto;
+    bottom: 125px;
+    visibility: hidden;
+
+  }
+
+  .brandQuantities{
+    visibility: hidden;
+  }
+
+  .imagesCollection{
+    position: absolute;
+    margin: 10px auto;
+    bottom: 450px;
+    left: 50px;
+    visibility: visible;
+
+  }
+
+  .addidasPic{
+    position: absolute;
+    bottom:430px;
+    margin: 5px;
+    visibility: hidden;
+  }
+
+  .nikePic{
+    position: absolute;
+    bottom:430px;
+    margin: 5px;
+    visibility: hidden;
+  }
+
+  .pumaPic{
+    position: absolute;
+    bottom:430px;
+    margin: 5px;
+    visibility: hidden;
+  }
+
+  .reebokPic{
+    position: absolute;
+    bottom:430px;
+    margin: 5px;
+    visibility: hidden;
+  }
+
+  .myWelcome{
+    position: relative;
+    bottom:470px;
+    left: 250px;
+    background-color: lightblue;
+    position: relative;
+    border:5px solid #cccc00;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    display: inline-block;
+    font-family: 'Shift', sans-serif;
+  }
